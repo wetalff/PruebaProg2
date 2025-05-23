@@ -1,5 +1,5 @@
 # PruebaProg2
+# Alfredo Montalvan
+# Alondra sofia
+# Daniela Rocha
 
-#Alfredo Montalvan
-#Alondra Sofia
-#Daniela Rocha
