@@ -4,12 +4,12 @@
 #bidimensional por columnas. Los datos del arreglo bidimensional serán tomados de la tabla.
 
 
-Matriz = [[10, 50, 40], 
+Matriz = [[10, 50, 40],  #Se crea la matriz
          [30, 20, 60], 
          [70, 80, 90]]
 
 print("-" * 22)
-for fila in Matriz:
+for fila in Matriz:                              #Se imprime la matriz original sin cambios
     for columna in fila:
         print(f"|{columna:> 5}", end = " ")
     print("|")
@@ -18,6 +18,14 @@ for fila in Matriz:
 print("Matriz Alineada por columnas")
 
 print("-" * 36)
-resultado = [Matriz[fila][col] for col in range(len(Matriz[0])) for fila in range(len(Matriz))]
+resultado = [Matriz[fila][columna] for columna in range(len(Matriz[0])) for fila in range(len(Matriz))]
 print(resultado)
-print("-" * 36)
+print("-" * 36)                                    #Se imprime la matriz ya alineada por columnas
+       
+       
+
+
+       
+   
+        
+        
