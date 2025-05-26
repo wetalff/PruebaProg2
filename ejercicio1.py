@@ -34,16 +34,16 @@ total_general = 0
 totales = []
 for tienda in ventas:
     total = sum(tienda)
-    totales.append(total)
+    totales.append(total) # .append = Agrega un nuevo dato al final de la lista.
     total_general += total
 
 # c) Tienda que más vendió
-mayor_venta = max(totales)
-tienda_mayor = tiendas[totales.index(mayor_venta)]
+mayor_venta = max(totales) # max = encontrar el valor más grande dentro de una lista o tupla.
+tienda_mayor = tiendas[totales.index(mayor_venta)] # .index = busca un valor dentro de una lista 
 
 # d) Tienda que menos vendió
-menor_venta = min(totales)
-tienda_menor = tiendas[totales.index(menor_venta)]
+menor_venta = min(totales) # min = encontrar el valor más pequeño dentro de una lista
+tienda_menor = tiendas[totales.index(menor_venta)] 
 
 # Mostrar resultados
 print("a) Venta total de todas las tiendas:", total_general)
