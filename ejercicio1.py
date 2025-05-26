@@ -16,7 +16,7 @@ b. Venta total por tienda
 c. Tienda que más vendió en los 6 meses
 d. Tienda que menos vendió"""
 
-# Creamos una lista bidimensional: cada fila representa una tienda y cada columna un mes
+# Datos de ventas por tienda (cada lista es una tienda, con ventas de julio a diciembre)
 ventas = [
     [50000, 60000, 65000, 62000, 78000, 95000],  # ABSA 1
     [89000, 90000, 98000, 80000, 85000, 90000],  # ABSA 2
@@ -24,34 +24,31 @@ ventas = [
     [92000, 88000, 90000, 76000, 82000, 93000]   # ABSA 4
 ]
 
-# Nombres de las tiendas y los meses
-tiendas = ['ABSA 1', 'ABSA 2', 'ABSA 3', 'ABSA 4']
-meses = ['Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+# Lista de nombres de tiendas
+tiendas = ["ABSA 1", "ABSA 2", "ABSA 3", "ABSA 4"]
 
-print("Estado de cuenta de las Sucursales ABSA en el segundo semestre 2022")
-print("-" * 88)  
-print(f"{'Tienda/Mes':<10} | " + " | ".join([f"{mes:<10}" for mes in meses]))
-print("-" * 88)
+# a) Venta total de todas las tiendas
+total_general = 0
 
-ventas_por_tienda = []  # Lista para guardar la suma total de cada tienda
+# b) Venta total por tienda
+totales = []
+for tienda in ventas:
+    total = sum(tienda)
+    totales.append(total)
+    total_general += total
 
-# Recorremos cada tienda y sus ventas mensuales
-for i, fila in enumerate(ventas): # Enumerate: Convierte una lista en algo que recorre y te da dos cosas a la vez
-    ventas_por_tienda.append(sum(fila))  # Calculamos y guardamos la venta total por tienda
-    print(f"{tiendas[i]:<10} | " + " | ".join([f"${v:<9,}" for v in fila]))
-print("-" * 88)
+# c) Tienda que más vendió
+mayor_venta = max(totales)
+tienda_mayor = tiendas[totales.index(mayor_venta)]
 
-# Sumamos todas las ventas de todas las tiendas para obtener el total general
-venta_total = sum(ventas_por_tienda)
+# d) Tienda que menos vendió
+menor_venta = min(totales)
+tienda_menor = tiendas[totales.index(menor_venta)]
 
-# Usamos funciones integradas para obtener la tienda con mayor y menor venta
-max_tienda = tiendas[ventas_por_tienda.index(max(ventas_por_tienda))]  # Tienda con más ventas
-min_tienda = tiendas[ventas_por_tienda.index(min(ventas_por_tienda))]  # Tienda con menos ventas
-
-# Mostramos los resultados requeridos
-print(f"\na) Venta total por todas las tiendas: ${venta_total:,}")
+# Mostrar resultados
+print("a) Venta total de todas las tiendas:", total_general)
 print("b) Venta total por tienda:")
-for i, total in enumerate(ventas_por_tienda):
-    print(f"{tiendas[i]}: ${total:,}")
-print(f"c) Tienda que más vendió: {max_tienda} con ${max(ventas_por_tienda):,}")
-print(f"d) Tienda que menos vendió: {min_tienda} con ${min(ventas_por_tienda):,}")
+for i in range(4):
+    print(tiendas[i], ":", totales[i])
+print("c) Tienda que más vendió:", tienda_mayor, "con", mayor_venta)
+print("d) Tienda que menos vendió:", tienda_menor, "con", menor_venta)
