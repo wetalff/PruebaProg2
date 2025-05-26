@@ -14,7 +14,7 @@ for i in range(5):
     calificaciones = []
     for j in range(1, 4):
         calificacion = float(input(f"Ingrese calificación {j}: "))
-        calificaciones.append(calificacion)
+        calificaciones.append(calificacion) # .append = Agrega un nuevo dato al final de la lista.
     
     # Guardamos el nombre y las calificaciones como una tupla o lista dentro de estudiantes
     estudiantes.append((nombre, calificaciones))
