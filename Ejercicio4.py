@@ -1,3 +1,12 @@
+#4. Sea M una matriz de enteros de “n” filas por “m” columnas, ambas positivas y menores que 10.
+# Realice un programa en que permita:
+#a. Solicitar el ingreso de n y m, según las restricciones indicadas.
+#b. Ingresar cada uno de los valores de la matriz.
+#c. Mostrar, para cada fila, la suma de sus valores.
+#d. Mostrar, para cada columna, el promedio de sus valores.
+#e. El mayor valor almacenado en toda la Matriz, indicando en que fila y columna se
+encuentra.
+
 # Pedimos la cantidad de filas y columnas (de 1 a 9)
 while True:
     total_filas = int(input("¿Cuántas filas? (máx. 9): "))
